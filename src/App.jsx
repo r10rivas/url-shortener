@@ -1,12 +1,12 @@
-import { useState } from 'react'
+import Navbar from './components/Navbar'
 
-function App() {
+const App = () => {
 
   return (
-    <div className="App bg-red-300">
-      hello!
+    <div className="font-poppins">
+      <Navbar />
     </div>
   )
 }
 
-export default App
+export default App;
