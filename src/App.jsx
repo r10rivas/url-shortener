@@ -1,4 +1,3 @@
-// import Navbar from './components/Navbar';
 import illustrationWorking from "./assets/images/illustration-working.svg";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -24,27 +23,6 @@ const App = () => {
 
   const [ urls, setUrls ] = useState([]);
 
-  // const [ textUrl, setTextUrl ] = useState("");
-
-  // const handleSubmit = async event => {
-  //   event.preventDefault();
-
-  //   try {
-  //     const response = await fetch(`https://api.shrtco.de/v2/shorten?url=${textUrl}`);
-  //     const data = await response.json();
-
-  //     console.log(data.result);
-
-  //     const { code, short_link, original_link: complete } = data.result;
-
-  //     const shortedLink = { code, short_link, complete }
-
-  //     setUrls([ ...urls, shortedLink ]);
-  //   } catch (error) {
-  //     console.log(error);
-  //   }
-  // }
-
   const onSubmit = async ({ url }) => {
     try {
       const response = await fetch(`https://api.shrtco.de/v2/shorten?url=${url}`);
@@ -65,10 +43,8 @@ const App = () => {
 
   return (
     <div className="font-poppins overflow-x-hidden">
-      {/* <Navbar /> */}
-
       <div className="container mx-auto">
-        <div className="w-full mt-10 mb-32 flex flex-col md:flex-row">
+        <div className="w-full mt-10 mb-32 flex flex-col space-y-8 md:flex-row md:space-y-0">
           <div className="flex-1 md:order-last">
             <div className="w-full">
               <img
@@ -80,16 +56,18 @@ const App = () => {
           </div>
 
           <div className="mx-8 flex-1 flex flex-col md:justify-center md:mx-0">
-            <h1 className="w-full mb-8 font-bold text-3xl text-center lg:text-5xl">
+            <h1 className="w-full mb-8 font-bold text-3xl text-center md:text-5xl">
               More than just shorter links
             </h1>
             <div className="flex flex-col items-center">
               <p className="mb-8 text-zinc-500 text-center text-lg">
                 Build your brand's recognition and get detailed insights on how your links are performing.
               </p>
-              <button className="py-2 px-8 text-white text-xl font-semibold bg-cyan-400 rounded-full md:py-4">
-                Get started
-              </button>
+              <Button
+                styleCustom="w-auto text-lg md:self-start md:ml-6 md:px-10"
+                text="Get started"
+                type="button"
+              />
             </div>
           </div>
         </div>
@@ -116,6 +94,7 @@ const App = () => {
                 </FormInput>
                 <div>
                   <Button
+                    styleCustom="rounded-md"
                     text="Shorten it!"
                     type="submit"
                   />
