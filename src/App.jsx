@@ -1,7 +1,67 @@
 // import Navbar from './components/Navbar';
 import illustrationWorking from "./assets/images/illustration-working.svg";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { formValidate } from "./utils/formValidate";
+
+import FormError from "./components/FormError";
+import FormInput from "./components/FormInput";
+import Button from "./components/Button";
+
 
 const App = () => {
+  const {
+    formState: { errors },
+    handleSubmit,
+    register,
+    resetField,
+  } = useForm();
+
+  const {
+    required,
+    patternURL,
+  } = formValidate();
+
+  const [ urls, setUrls ] = useState([]);
+
+  // const [ textUrl, setTextUrl ] = useState("");
+
+  // const handleSubmit = async event => {
+  //   event.preventDefault();
+
+  //   try {
+  //     const response = await fetch(`https://api.shrtco.de/v2/shorten?url=${textUrl}`);
+  //     const data = await response.json();
+
+  //     console.log(data.result);
+
+  //     const { code, short_link, original_link: complete } = data.result;
+
+  //     const shortedLink = { code, short_link, complete }
+
+  //     setUrls([ ...urls, shortedLink ]);
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // }
+
+  const onSubmit = async ({ url }) => {
+    try {
+      const response = await fetch(`https://api.shrtco.de/v2/shorten?url=${url}`);
+      const data = await response.json();
+      console.log(data)
+
+      const { code, short_link, original_link: complete } = data.result;
+
+      const shortedLink = { code, short_link, complete }
+
+      setUrls([ ...urls, shortedLink ]);
+
+      resetField("url");
+    } catch (error) {
+      console.log(error);
+    }
+  }
 
   return (
     <div className="font-poppins overflow-x-hidden">
@@ -37,14 +97,47 @@ const App = () => {
 
       <div className="py-8 bg-slate-200">
         <div className="container mx-auto">
-          <div className="relative h-36 mx-8 md:mx-0 md:h-28">
+          <div className="relative h-32 mx-8 md:mx-0 md:h-28">
             <div className="w-full p-6 md:p-12 absolute -top-24 bg-[url('./assets/images/bg-shorten-mobile.svg')] bg-no-repeat bg-cover bg-indigo-200 rounded-md md:bg-[url('./assets/images/bg-shorten-desktop.svg')]">
-              <form className="flex flex-col space-y-6 md:space-y-0 md:flex-row md:space-x-4">
-                <input className="w-full p-2 md:p-4 rounded-md" type="text" placeholder="Shorten link here..." />
-                <button className="py-2 px-8 bg-cyan-400 rounded-md text-white text-lg font-semibold md:py-4" type="submit">Shorten</button>
+              <form
+                className="flex flex-col space-y-5 md:space-y-0 md:flex-row md:space-x-4"
+                onSubmit={handleSubmit(onSubmit)}
+              >
+                <FormInput
+                  error={errors.url}
+                  placeholder="Shorten link here..."
+                  type="text"
+                  { ...register("url",{
+                    required,
+                    pattern: patternURL,
+                  })}
+                >
+                  <FormError error={errors.url}/>
+                </FormInput>
+                <div>
+                  <Button
+                    text="Shorten it!"
+                    type="submit"
+                  />
+                </div>
               </form>
             </div>
           </div>
+          <div className="mx-8">
+            {
+              urls.map(url => (
+                <div className="w-full flex flex-col justify-between bg-white rounded-md md:flex-row" key={url.code}>
+                  <div className="p-3 border-b border-green-500 md:border-0">
+                    <span className="">{url.complete}</span>
+                  </div>
+                  <div className="p-3">
+                    <span className="text-cyan-400 text-lg font-medium">{url.short_link}</span>
+                  </div>
+                </div>
+              ))
+            }
+          </div>
+
           {/* <div className="pt-28 bg-red-400">
             URLS
           </div> */}
@@ -70,6 +163,14 @@ const App = () => {
           <button className="py-2 px-8 text-white text-xl font-semibold bg-cyan-400 rounded-full md:py-4" type="button">
             Get started
           </button>
+        </div>
+      </div>
+
+      <div className="py-12 bg-zinc-800">
+        <div className="container mx-auto">
+          <div className="text-white">
+            Shortly
+          </div>
         </div>
       </div>
     </div>
