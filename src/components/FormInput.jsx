@@ -10,8 +10,8 @@ const FormInput = forwardRef(({ children, error, ...resProps }, ref) => {
     <div className="w-full">
       <input
         { ...resProps }
-        className={`w-full block px-3 py-3.5 border rounded-md text-sm shadow-sm placeholder-slate-400
-        focus:outline-none focus:ring-1 ${classInputError} md:text-xl`}
+        className={`w-full block px-3 py-3.5 border rounded-md text-base shadow-sm placeholder-slate-400
+        focus:outline-none focus:ring-1 md:text-lg ${classInputError}`}
         ref={ref}
       />
       {children}

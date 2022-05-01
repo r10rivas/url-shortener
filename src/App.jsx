@@ -64,7 +64,7 @@ const App = () => {
                 Build your brand's recognition and get detailed insights on how your links are performing.
               </p>
               <Button
-                styleCustom="w-auto text-lg md:self-start md:ml-6 md:px-10"
+                styleCustom="w-auto rounded-full text-lg md:self-start md:ml-6 md:px-10"
                 text="Get started"
                 type="button"
               />
