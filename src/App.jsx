@@ -10,6 +10,8 @@ import ListURl from "./components/ListUrl";
 
 
 const App = () => {
+  const [ loading, setLoading ] = useState(false);
+
   const {
     formState: { errors },
     handleSubmit,
@@ -26,6 +28,8 @@ const App = () => {
 
   const onSubmit = async ({ url }) => {
     try {
+      setLoading(true);
+
       const response = await fetch(`https://api.shrtco.de/v2/shorten?url=${url}`);
       const data = await response.json();
       console.log(data)
@@ -39,6 +43,8 @@ const App = () => {
       resetField("url");
     } catch (error) {
       console.log(error);
+    } finally {
+      setLoading(false);
     }
   }
 
@@ -96,6 +102,7 @@ const App = () => {
                 </FormInput>
                 <div>
                   <Button
+                    loading={loading}
                     styleCustom="rounded-md"
                     text="Shorten it!"
                     type="submit"

@@ -1,4 +1,4 @@
-import { Fragment, useState, } from "react";
+import { useState, } from "react";
 import Button from "./Button";
 
 const ListURl = ({ urls }) => {
@@ -27,9 +27,9 @@ const ListURl = ({ urls }) => {
               </div>
               <div className="p-3 col-span-4 md:col-span-2">
                 <Button
+                  onClick= {() => handleCopy({ code, url: short_link })}
                   styleCustom="rounded-md py-3 md:py-1"
                   text={copy[code] ? "Copied" : "Copy"}
-                  onClick= {() => handleCopy({ code, url: short_link })}
                 />
               </div>
             </div>
