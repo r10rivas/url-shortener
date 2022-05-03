@@ -21,7 +21,7 @@ const ListURl = ({ urls }) => {
                 </span>
               </div>
               <div className="col-span-4 md:col-span-2 md:flex md:items-center">
-                <span className="p-3 whitespace-nowrap text-ellipsis overflow-x-hidden text-cyan-400 text-lg font-medium block md:text-lg">
+                <span className="p-3 pb-0 whitespace-nowrap text-ellipsis overflow-x-hidden text-cyan-400 text-lg font-medium block md:text-lg md:pb-3">
                   {short_link}
                 </span>
               </div>
