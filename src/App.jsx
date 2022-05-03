@@ -71,7 +71,6 @@ const App = () => {
                 Build your brand's recognition and get detailed insights on how your links are performing.
               </p>
               <Button
-                color="bg-purple-500 hover:bg-purple-300"
                 styleCustom="w-auto rounded-full text-lg md:self-start md:ml-6 md:px-10"
                 text="Get started"
                 type="button"
@@ -127,13 +126,15 @@ const App = () => {
       </div>
 
       <div className="py-8 bg-[url('./assets/images/bg-boost-desktop.svg')] bg-no-repeat bg-cover bg-center bg-indigo-300">
-        <div className="container mx-auto flex flex-col items-center">
+        <div className="container mx-auto py-4 flex flex-col items-center">
           <h2 className=" mb-6 text-center font-bold text-4xl text-white">
             Boost your links today
           </h2>
-          <button className="py-2 px-8 text-white text-xl font-semibold bg-cyan-400 rounded-full md:py-4" type="button">
-            Get started
-          </button>
+          <Button
+            styleCustom="w-auto rounded-full text-lg md:ml-6 md:px-10"
+            text="Get started"
+            type="button"
+          />
         </div>
       </div>
 
