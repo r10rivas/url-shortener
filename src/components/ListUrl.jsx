@@ -27,6 +27,7 @@ const ListURl = ({ urls }) => {
               </div>
               <div className="p-3 col-span-4 md:col-span-2">
                 <Button
+                  color={ copy[code] && "bg-purple-500 hover:bg-purple-30" }
                   onClick= {() => handleCopy({ code, url: short_link })}
                   styleCustom="rounded-md py-3 md:py-1"
                   text={copy[code] ? "Copied" : "Copy"}
