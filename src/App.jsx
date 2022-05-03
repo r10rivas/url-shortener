@@ -6,6 +6,7 @@ import { formValidate } from "./utils/formValidate";
 import FormError from "./components/FormError";
 import FormInput from "./components/FormInput";
 import Button from "./components/Button";
+import ListURl from "./components/ListUrl";
 
 
 const App = () => {
@@ -64,6 +65,7 @@ const App = () => {
                 Build your brand's recognition and get detailed insights on how your links are performing.
               </p>
               <Button
+                color="bg-purple-500 hover:bg-purple-300"
                 styleCustom="w-auto rounded-full text-lg md:self-start md:ml-6 md:px-10"
                 text="Get started"
                 type="button"
@@ -102,24 +104,7 @@ const App = () => {
               </form>
             </div>
           </div>
-          <div className="mx-8">
-            {
-              urls.map(url => (
-                <div className="w-full flex flex-col justify-between bg-white rounded-md md:flex-row" key={url.code}>
-                  <div className="p-3 border-b border-green-500 md:border-0">
-                    <span className="">{url.complete}</span>
-                  </div>
-                  <div className="p-3">
-                    <span className="text-cyan-400 text-lg font-medium">{url.short_link}</span>
-                  </div>
-                </div>
-              ))
-            }
-          </div>
-
-          {/* <div className="pt-28 bg-red-400">
-            URLS
-          </div> */}
+          <ListURl urls={urls}/>
         </div>
       </div>
 
