@@ -7,6 +7,7 @@ import FormError from "./components/FormError";
 import FormInput from "./components/FormInput";
 import Button from "./components/Button";
 import ListURl from "./components/ListUrl";
+import SectionStats from "./components/SectionStats";
 
 const App = () => {
   const [ loading, setLoading ] = useState(false);
@@ -121,6 +122,8 @@ const App = () => {
           <p className="text-center text-zinc-500 text-base">
             Track how your links are performing across the web with our advanced statistics dashboard.
           </p>
+
+          <SectionStats/>
         </div>
       </div>
 
