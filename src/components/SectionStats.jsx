@@ -4,7 +4,7 @@ import IconFullyCustomizable from "../assets/images/icon-fully-customizable.svg"
 
 const SectionStats  = () => {
   return (
-    <div className="grid grid-cols-3 gap-3 gap-y-16 lg:gap-6 mt-14 relative after:content-['*'] before:w-3 before:h-4/6 before:bg-cyan-500 before:bottom-1/2 md:before:bottom-2/3 before:left-1/2 before:transform before:translate-y-1/2 before:-translate-x-1/2 before:absolute md:before:w-5/6 md:before:h-3">
+    <div className="grid grid-cols-3 gap-x-4 gap-y-16 lg:gap-6 mt-14 relative after:content-['*'] before:w-3 before:h-4/6 before:bg-cyan-500 before:bottom-1/2 md:before:bottom-2/3 before:left-1/2 before:transform before:translate-y-1/2 before:-translate-x-1/2 before:absolute md:before:w-5/6 md:before:h-3">
        <div className="col-span-3 md:col-span-1">
          <div className="p-10 pt-24 relative bg-white rounded-md">
             <div className="w-16 h-16 left-1/2 transform -translate-x-1/2 bg-purple-800 rounded-full absolute -top-7 flex justify-center items-center lg:w-20 lg:h-20">

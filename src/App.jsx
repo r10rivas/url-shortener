@@ -122,8 +122,9 @@ const App = () => {
           <p className="text-center text-zinc-500 text-base">
             Track how your links are performing across the web with our advanced statistics dashboard.
           </p>
-
-          <SectionStats/>
+          <div className="mx-8 md:mx-0">
+            <SectionStats/>
+          </div>
         </div>
       </div>
 
