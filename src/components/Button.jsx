@@ -1,5 +1,5 @@
 const Button = ({ color, loading, onClick, styleCustom, text, type, }) => {
-  const styleColor =  color ?? "bg-cyan-500 hover:bg-cyan-300";
+  const styleColor =  color ?? "bg-primary-cyan hover:bg-opacity-60";
 
   return (
     <button

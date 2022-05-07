@@ -51,8 +51,8 @@ const App = () => {
 
   return (
     <div className="font-poppins overflow-x-hidden">
-      <div className="container mx-auto">
-        <div className="w-full mt-10 mb-32 flex flex-col space-y-8 md:flex-row md:space-y-0">
+      <div className="container mx-auto mt-20">
+        <div className="w-full mt-20 mb-32 flex flex-col space-y-8 md:flex-row md:space-y-0">
           <div className="flex-1 md:order-last">
             <div className="w-full">
               <img
@@ -67,7 +67,7 @@ const App = () => {
               More than just shorter links
             </h1>
             <div className="flex flex-col items-center">
-              <p className="mb-8 text-zinc-500 text-center text-lg">
+              <p className="mb-8 text-neutral-grayish-violet text-center text-lg">
                 Build your brand's recognition and get detailed insights on how your links are performing.
               </p>
               <Button
@@ -82,7 +82,7 @@ const App = () => {
       <div className="py-8 bg-slate-200">
         <div className="container mx-auto">
           <div className="relative h-32 mx-8 md:mx-0 md:h-28">
-            <div className="w-full p-6 md:p-12 absolute -top-24 bg-[url('./assets/images/bg-shorten-mobile.svg')] bg-no-repeat bg-cover bg-indigo-200 rounded-md md:bg-[url('./assets/images/bg-shorten-desktop.svg')]">
+            <div className="w-full p-6 md:p-12 absolute -top-24 bg-[url('./assets/images/bg-shorten-mobile.svg')] bg-no-repeat bg-cover bg-primary-dark-violet rounded-md md:bg-[url('./assets/images/bg-shorten-desktop.svg')]">
               <form
                 className="flex flex-col space-y-5 md:space-y-0 md:flex-row md:space-x-4"
                 onSubmit={handleSubmit(onSubmit)}
@@ -115,7 +115,7 @@ const App = () => {
 
       <SectionStats/>
 
-      <div className="py-8 bg-[url('./assets/images/bg-boost-desktop.svg')] bg-no-repeat bg-cover bg-center bg-indigo-300">
+      <div className="py-8 bg-[url('./assets/images/bg-boost-desktop.svg')] bg-no-repeat bg-cover bg-center bg-primary-dark-violet">
         <div className="container mx-auto py-4 flex flex-col items-center">
           <h2 className=" mb-6 text-center font-bold text-3xl text-white">
             Boost your links today

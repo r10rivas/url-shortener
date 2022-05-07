@@ -16,18 +16,18 @@ const ListURl = ({ urls }) => {
           urls.map( ({ complete, short_link, code }) => (
             <div className="grid grid-cols-4 gap-3 bg-white rounded-md gap-y-1 md:gap-y-3 md:grid-cols-11 mb-4 last:mb-0" key={code}>
               <div className="col-start-1 col-span-4 md:col-span-7 md:flex md:items-center">
-                <span className="block whitespace-nowrap text-ellipsis overflow-x-hidden p-3 border-b text-zinc-600 font-semibold border-green-500 md:text-lg md:border-0">
+                <span className="block whitespace-nowrap text-ellipsis overflow-x-hidden p-3 border-b text-neutral-very-dark-violet font-semibold border-green-500 md:text-lg md:border-0">
                   {complete}
                 </span>
               </div>
               <div className="col-span-4 md:col-span-2 md:flex md:items-center">
-                <span className="p-3 pb-0 whitespace-nowrap text-ellipsis overflow-x-hidden text-cyan-400 text-lg font-medium block md:text-lg md:pb-3">
+                <span className="p-3 pb-0 whitespace-nowrap text-ellipsis overflow-x-hidden text-primary-cyan text-lg font-medium block md:text-lg md:pb-3">
                   {short_link}
                 </span>
               </div>
               <div className="p-3 col-span-4 md:col-span-2">
                 <Button
-                  color={ copy[code] && "bg-purple-500 hover:bg-purple-30" }
+                  color={ copy[code] && "bg-primary-dark-violet hover:bg-opacity-80" }
                   onClick= {() => handleCopy({ code, url: short_link })}
                   styleCustom="rounded-md py-3 md:py-1"
                   text={copy[code] ? "Copied" : "Copy"}
