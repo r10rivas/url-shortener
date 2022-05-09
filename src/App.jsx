@@ -2,6 +2,7 @@ import illustrationWorking from "./assets/images/illustration-working.svg";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { formValidate } from "./utils/formValidate";
+import { useLocalStorage } from "./hooks/useLocalStorage";
 
 import Navbar from "./components/Navbar";
 import FormError from "./components/FormError";
@@ -12,8 +13,6 @@ import SectionStats from "./components/SectionStats";
 import Footer from "./components/Footer";
 
 const App = () => {
-  const [ loading, setLoading ] = useState(false);
-
   const {
     formState: { errors },
     handleSubmit,
@@ -26,7 +25,9 @@ const App = () => {
     patternURL,
   } = formValidate();
 
-  const [ urls, setUrls ] = useState([]);
+  const [ loading, setLoading ] = useState(false);
+
+  const [ urls, setUrls ] = useLocalStorage('urls', []);
 
   const onSubmit = async ({ url }) => {
     try {
