@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { formValidate } from "./utils/formValidate";
 
+import Navbar from "./components/Navbar";
 import FormError from "./components/FormError";
 import FormInput from "./components/FormInput";
 import Button from "./components/Button";
@@ -51,7 +52,8 @@ const App = () => {
 
   return (
     <div className="font-poppins overflow-x-hidden">
-      <div className="container mx-auto mt-20">
+      <Navbar/>
+      <div className="container mx-auto mt-28">
         <div className="w-full mt-20 mb-32 flex flex-col space-y-8 md:flex-row md:space-y-0">
           <div className="flex-1 md:order-last">
             <div className="w-full">
